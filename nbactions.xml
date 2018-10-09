@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<actions>
+        <action>
+            <actionName>CUSTOM-spring-boot-run-vcap</actionName>
+            <displayName>spring-boot-run-vcap</displayName>
+            <goals>
+                <goal>org.springframework.boot:spring-boot-maven-plugin:2.0.5.RELEASE:run</goal>
+            </goals>
+            <properties>
+                <Env.VCAP_SERVICES>'{"p-mysql": [{"credentials": {"username":"admin", "jdbcUrl": "jdbc:mysql://127.0.0.1:3306/albums?user=root"}, "name": "albums-mysql"}, {"credentials": {"jdbcUrl": "jdbc:mysql://127.0.0.1:3306/movies?user=root"}, "name": "movies-mysql"}]}'</Env.VCAP_SERVICES>
+            </properties>
+        </action>
+        <action>
+            <actionName>CUSTOM-bob</actionName>
+            <displayName>bob</displayName>
+            <goals>
+                <goal>org.springframework.boot:spring-boot-maven-plugin:2.0.5.RELEASE:run</goal>
+            </goals>
+            <properties>
+                <Env.VCAP_SERVICES>{"p-mysql": [{"credentials": {"username":"admin", "jdbcUrl": "jdbc:mysql://127.0.0.1:3306/albums?user=root"}, "name": "albums-mysql"}, {"credentials": {"jdbcUrl": "jdbc:mysql://127.0.0.1:3306/movies?user=root"}, "name": "movies-mysql"}]}</Env.VCAP_SERVICES>
+            </properties>
+        </action>
+    </actions>
